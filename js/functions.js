@@ -7,7 +7,7 @@ function reveal () {
    BTN.classList.toggle('activeBtn');
 }
 function clickTarget(e) {
-	if (!REVEAL.contains(e.target) ) {
+	if (!REVEAL.contains(e.target) && MENU.classList.contains('active') ) {
 		reveal();
 	}
 }
