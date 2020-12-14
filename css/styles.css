@@ -4,10 +4,20 @@ html {
   font-family: "Roboto", sans-serif;
   background-color: whitesmoke;
   -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
 }
 
 *, *:before, *:after {
   box-sizing: inherit;
+}
+
+section {
+  opacity: 0;
+}
+
+section.is-visible {
+  opacity: 1;
+  transition: opacity 1s;
 }
 
 .content-wrap {
@@ -17,30 +27,65 @@ html {
   background-color: white;
 }
 
+body .menu {
+  position: fixed;
+  left: -204px;
+  top: 0;
+  height: 100vh;
+  background-color: #4267b2;
+  margin: 0;
+  width: 14em;
+  transition: left 1s;
+  box-shadow: 5px -7px 10px #888888;
+  z-index: 1000;
+}
+body .active {
+  left: 0px;
+  transition: left 1s;
+}
+body .activeBtn {
+  left: 10.5em;
+  transition: left 1s;
+}
+body nav button {
+  background-color: #4267b2;
+  color: white;
+  border-radius: 10px 10px 0 0;
+  border: none;
+  position: fixed;
+  width: 50px;
+  transform: rotate(90deg);
+  left: -2em;
+  transition: left 1s;
+  top: 100px;
+  outline: none;
+  padding: 10px 90px 10px 45px;
+  box-shadow: 5px -7px 10px #888888;
+}
+body nav button:focus {
+  border: none;
+}
+body nav ul {
+  display: flex;
+  flex-direction: column;
+}
+body nav li {
+  margin: 20px auto 28px auto;
+  list-style: none;
+  font-weight: 500;
+  text-rendering: optimizeSpeed;
+  text-align: left;
+}
+body nav li a {
+  color: white;
+  text-decoration: none;
+}
+body nav li a:hover {
+  color: black;
+  transition: color 0.5s;
+}
 body main {
   background-color: white;
-}
-body main nav ul {
-  display: flex;
-  flex-direction: row;
-  align-self: flex-end;
-  align-items: center;
-}
-body main nav li {
-  margin: 9px;
-  list-style: none;
-  font-weight: bold;
-  text-rendering: optimizeSpeed;
-}
-body main nav li:first-of-type {
-  flex-grow: 2;
-}
-body main nav li:last-child {
-  background-color: #2500f9;
-  padding: 10px;
-  border-radius: 30px;
-  color: #f8f8ff;
-  font-weight: normal;
 }
 body main header {
   background-image: url(../images/header-bg_mod.png);
@@ -76,11 +121,25 @@ body main header button {
   margin: 0 0 0 140px;
   width: 160px;
 }
+body main header button:hover {
+  background-color: transparent;
+  transition: background-color 0.5s;
+  cursor: pointer;
+  color: #616368;
+  border: 1px solid #2500f9;
+}
 body main header .demo {
   margin: 0 0 0 10px;
   width: auto;
   background-color: transparent;
   color: #616368;
+  border: 1px solid #2500f9;
+}
+body main header .demo:hover {
+  background-color: #2500f9;
+  transition: background-color 0.5s;
+  cursor: pointer;
+  color: #f8f8ff;
   border: 1px solid #2500f9;
 }
 body main header .m-head {
@@ -178,7 +237,7 @@ body .infoOne .info {
   padding: 0 0 0 180px;
 }
 body .infoOne .info h1 {
-  color: #242f51;
+  color: #243051;
   font-size: 40px;
   width: 100%;
   padding: 0 40px 0 0;
@@ -197,7 +256,6 @@ body .adv ul {
 }
 body .adv ul li {
   list-style: none;
-  vertical-align: top;
   display: block;
 }
 body .adv ul li img {
@@ -258,13 +316,20 @@ body .infoTwo div button {
   width: 200px;
   font-weight: 600;
 }
+body .infoTwo div button:hover {
+  background-color: transparent;
+  transition: background-color 0.5s;
+  cursor: pointer;
+  color: #616368;
+  border: 1px solid #2500f9;
+}
 body .betterUs .introSec {
   display: block;
   margin: 0 auto 50px auto;
 }
 body .betterUs .introSec h2 {
   font-size: 36px;
-  color: #242f51;
+  color: #243051;
   text-align: center;
   font-weight: 500;
   margin: 0 auto;
@@ -294,7 +359,7 @@ body .betterUs .infoSec div h2, body .betterUs .infoSec div p, body .betterUs .i
   padding: 5px 0;
 }
 body .betterUs .infoSec div h2 {
-  color: #242f51;
+  color: #243051;
   font-size: 20px;
 }
 body .betterUs .infoSec div p {
@@ -311,7 +376,7 @@ body .extras .infoSec .introSec {
   padding: 0 0 50px 100px;
 }
 body .extras .infoSec .introSec h2 {
-  color: #242f51;
+  color: #243051;
   font-size: 30px;
   width: 40%;
   padding: 0;
@@ -334,7 +399,7 @@ body .extras .infoSec .exFeaturesDetail div {
   margin: 0 0 50px 0;
 }
 body .extras .infoSec .exFeaturesDetail div h2 {
-  color: #242f51;
+  color: #243051;
   font-size: 20px;
 }
 body .extras .infoSec .exFeaturesDetail div p {
@@ -350,6 +415,14 @@ body .extras .infoSec .seeButton button {
   padding: 15px 40px;
   margin: 0 0 0 100px;
   width: 160px;
+  border: 1px solid #2500f9;
+}
+body .extras .infoSec .seeButton button:hover {
+  background-color: transparent;
+  transition: background-color 0.5s;
+  cursor: pointer;
+  color: #616368;
+  border: 1px solid #2500f9;
 }
 body .charges {
   display: block;
@@ -357,7 +430,7 @@ body .charges {
 }
 body .charges h1 {
   font-size: 36px;
-  color: #242f51;
+  color: #243051;
   text-align: center;
   padding: 0 30%;
 }
@@ -393,7 +466,7 @@ body .charges .rates .rateOne .rhead, body .charges .rates .rateTwo .rhead {
 }
 body .charges .rates .rateOne .rhead h3, body .charges .rates .rateTwo .rhead h3 {
   font-size: 60px;
-  color: #242f51;
+  color: #243051;
   text-align: center;
   padding: 0;
   margin: 20px 0 0 0;
@@ -408,7 +481,7 @@ body .charges .rates .rateOne .rhead h3 span, body .charges .rates .rateTwo .rhe
 }
 body .charges .rates .rateOne .rhead h6, body .charges .rates .rateTwo .rhead h6 {
   font-size: 16px;
-  color: #242f51;
+  color: #243051;
   text-align: center;
   margin: 10px 0 0 0;
 }
@@ -442,6 +515,14 @@ body .charges .rates .rateOne div .specs li:last-of-type, body .charges .rates .
   width: 160px;
   margin: 0 auto;
   font-size: 16px;
+  border: 1px solid #2500f9;
+}
+body .charges .rates .rateOne div .specs li:last-of-type:hover, body .charges .rates .rateTwo div .specs li:last-of-type:hover {
+  background-color: transparent;
+  transition: background-color 0.5s;
+  cursor: pointer;
+  color: #616368;
+  border: 1px solid #2500f9;
 }
 body .charges .rates .rateTwo {
   box-shadow: 5px 10px 10px #888888;
@@ -454,7 +535,7 @@ body .clientAppr .imageBody img {
   width: 100%;
 }
 body .clientAppr .bodyContent h1, body .clientAppr .bodyContent h5 {
-  color: #242f51;
+  color: #243051;
 }
 body .clientAppr .bodyContent p {
   color: #616368;
@@ -471,7 +552,7 @@ body .clientAppr .bodyContent section h6 {
   flex-grow: 1;
   margin: 25px 0 0 20px;
   line-height: 1.3;
-  color: #242f51;
+  color: #243051;
 }
 body .clientAppr .bodyContent section h6 span {
   color: #616368;
@@ -491,7 +572,7 @@ body .appDownload .introDownload {
   padding: 100px 0 0 100px;
 }
 body .appDownload .introDownload h1 {
-  color: #242f51;
+  color: #243051;
   margin: auto 0 0 0;
 }
 body .appDownload .introDownload p {
@@ -541,12 +622,21 @@ body footer h5 {
   body .content-wrap {
     width: 100%;
   }
-  body main nav ul {
+  body .menu {
+    left: -220px;
+  }
+  body .active {
+    left: 0px;
+  }
+  body nav ul {
     display: flex;
     flex-direction: column;
     align-self: flex-end;
     align-items: center;
     padding: 0 !important;
+  }
+  body nav button {
+    left: -3em;
   }
   body main header {
     display: block;
@@ -743,22 +833,36 @@ body footer h5 {
   .clientAppr {
     display: block !important;
   }
-  .clientAppr .bodyContent section {
-    display: block !important;
-    justify-content: space-around !important;
+  .clientAppr .bodyContent p {
+    padding: 0 5% !important;
+    text-align: center;
   }
-  .clientAppr .bodyContent section p {
-    margin: 0 !important;
+  .clientAppr .bodyContent img {
+    display: block;
+    margin: 10px auto !important;
+  }
+  .clientAppr .bodyContent h5 {
+    text-align: center;
+  }
+  .clientAppr .bodyContent h1 {
+    margin: 0 auto !important;
+    text-align: center;
+  }
+  .clientAppr .bodyContent section {
+    flex-direction: column;
   }
   .clientAppr .bodyContent section .ceo {
+    margin: 20px auto 10px auto !important;
     width: 100px;
     height: 100px;
-    display: block;
-    margin: 0 auto;
+  }
+  .clientAppr .bodyContent section .ceo img {
+    display: block !important;
   }
   .clientAppr .bodyContent section h6 {
     margin: 0 !important;
     text-align: center;
+    flex-grow: 0 !important;
   }
   .clientAppr .bodyContent section .leftA, .clientAppr .bodyContent section .rightA {
     display: none;
@@ -769,10 +873,10 @@ body footer h5 {
   }
   .appDownload .introDownload {
     width: 100%;
-    padding: 0px 0 0 0px !important;
+    padding: 0px 5px 0 5px !important;
   }
   .appDownload .introDownload h1 {
-    color: #242f51;
+    color: #243051;
     margin: 10px auto !important;
     text-align: center;
   }
@@ -808,6 +912,23 @@ body footer h5 {
 @media screen and (max-width: 1115px) and (min-width: 479px) {
   body .content-wrap {
     width: 100%;
+  }
+  body nav {
+    display: grid;
+    grid-column: 1;
+    grid-row: 1/5;
+  }
+  body .menu {
+    left: -220px;
+  }
+  body .active {
+    left: 0px;
+  }
+  body button {
+    left: -3em !important;
+  }
+  body .activeBtn {
+    left: 10.5em !important;
   }
   body main header {
     display: grid;
@@ -988,7 +1109,7 @@ body footer h5 {
     padding: 0px 0 0 20px;
   }
   body .appDownload .introDownload h1 {
-    color: #242f51;
+    color: #243051;
     margin: auto 0 0 0;
   }
   body .appDownload .introDownload p {
