@@ -9,19 +9,20 @@
   <link rel="stylesheet" href="css/styles.css">
   <title>Test Website</title>
 </head>
-<body>
-   <main class="content-wrap">
-    <nav>
+<body class="site">
+    <nav class="menu">
+        <button>Menu</button>
         <ul>
          <li><img src="images/applab.png" width="auto" alt="logo"></li>
-        <li>Home</li>
-        <li>Key Features</li>
-        <li>Pricing</li>
-        <li>Terminal</li>
-        <li>FAQ</li>
-        <li>Try for free</li>
+        <li><a href="#header">Home</a></li>
+        <li><a href="#partners">Key Features</a></li>
+        <li><a href="#features">Pricing</a></li>
+        <li><a href="#extras">Extras</a></li>
+        <li><a href="#charges">Plans</a></li>
+        <li data-free="free"><a data-free="free" href="#appDownload">Try for free</a></li>
      </ul>
     </nav>
+   <main id="header" class="header content-wrap">
        <header>
             <section>
           <h1>BEST app for your modern lifestyle</h1>
@@ -34,7 +35,7 @@
         </section>
        </header>
    </main>
-   <section class="partners content-wrap">
+   <section data-index="1" id="partners" class="partners content-wrap">
        <h2>Trusted by companies like</h2>
        <ul>
            <li>
@@ -54,7 +55,7 @@
            </li>
        </ul>
    </section>
-   <section class="features content-wrap">
+   <section data-index="2" id="features" class="features content-wrap">
        <section class="midImg">
            <img src="images/sec-mob-header.png" alt="">
        </section>
@@ -94,7 +95,7 @@
         </div>
        </section>
    </section>
-   <section class="infoOne content-wrap">
+   <section data-index="3" id="infoOne" class="infoOne content-wrap">
        <div class="info">
         <h1>Smart jackpots that
             you may love this
@@ -104,7 +105,7 @@
             elevant channels such as Facebook.</p>
        </div>
    </section>
-   <section class="adv content-wrap">
+   <section data-index="4" id="adv" class="adv content-wrap">
       <div class="sub">
         <ul>
             <li>
@@ -137,7 +138,7 @@
         </ul>
       </div>
    </section>
-   <section class="infoTwo content-wrap">
+   <section data-index="4" id="infoTwo" class="infoTwo content-wrap">
        <img src="images/sec-header-two.png" alt="header secondary image">
        <div>
            <h1>Designed & built by
@@ -149,7 +150,7 @@
            <button>Learn More</button>
        </div>
    </section>
-   <section class="betterUs content-wrap">
+   <section data-index="5" id="betterUs" class="betterUs content-wrap">
        <section class="introSec">
            <h2>Why you should choose
             our app</h2>
@@ -201,7 +202,7 @@
         </div>
        </section>
    </section>
-   <section class="extras content-wrap">
+   <section data-index="6" id="extras" class="extras content-wrap">
        <section class="infoSec">
            <section class="exFeatures">
                <div class="introSec">
@@ -249,7 +250,7 @@
            </section>
        </section>
    </section>
-   <section class="charges content-wrap">
+   <section data-index="7" id="charges" class="charges content-wrap">
        <h1>Get awesome features, without extra charges</h1>
        <p>The rise of mobile devices transforms the way we consume information entirely
         and the world's most elevant channels such as Facebook.</p>
@@ -292,7 +293,7 @@
         </section>
        </section>
    </section>
-   <section class="clientAppr content-wrap">
+   <section data-index="8" id="ca" class="clientAppr content-wrap">
     <section class="imageBody">
         <img src="images/middle-head.png" alt="world image">
     </section>
@@ -314,7 +315,7 @@
         </section>
     </section>
    </section>
-   <section class="appDownload content-wrap">
+   <section data-index="9" id="appDownload" class="appDownload content-wrap">
        <section class="introDownload">
            <h1>Download our App now !</h1>
            <p>The rise of mobile devices transforms the way we consume information entirely
@@ -348,4 +349,5 @@
     <h5>Copyright© Arifur Rahman Tushar 2019. All rights reserved</h5>
 </footer>
 </body>
+<script src="js/functions.js"></script>
 </html>
